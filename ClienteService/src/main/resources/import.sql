@@ -1,0 +1,5 @@
+INSERT INTO clientes (name, fecha_inicio, fecha_fin , estado) VALUES('Juan', STR_TO_DATE('19-05-2010', '%d-%m-%YYYY'), STR_TO_DATE('19-05-2020', '%d-%m-%YYYY'), 'A');
+INSERT INTO clientes (name, fecha_inicio, fecha_fin , estado) VALUES('Fredy', STR_TO_DATE('19-05-2010', '%d-%m-%YYYY'), STR_TO_DATE('19-05-2021', '%d-%m-%YYYY'), 'A');
+INSERT INTO clientes (name, fecha_inicio, fecha_fin , estado) VALUES('Carlos', STR_TO_DATE('19-01-2010', '%d-%m-%YYYY'), STR_TO_DATE('19-01-2019', '%d-%m-%YYYY'), 'I');
+INSERT INTO clientes (name, fecha_inicio, fecha_fin , estado)) VALUES('Marlon', STR_TO_DATE('11-03-2010', '%d-%m-%YYYY'), STR_TO_DATE('11-03-2020', '%d-%m-%YYYY'), 'A');
+INSERT INTO clientes (name, fecha_inicio, fecha_fin , estado) VALUES('Daniela', STR_TO_DATE('12-04-2010', '%d-%m-%YYYY'), STR_TO_DATE('12-04-2020', '%d-%m-%YYYY'), 'A');
