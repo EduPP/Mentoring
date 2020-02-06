@@ -56,7 +56,7 @@ public class ClienteController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<?> editar(@RequestBody ClienteDTO clienteDto,  @PathVariable long id) throws Exception{
 		ClienteDTO clienteEncontrado = clienteService.findClienteById(id);
-		clienteEncontrado.setEstado(clienteDto.getEstado());
+		clienteEncontrado.setEstado(clienteDto.getEstado()); 
 		clienteEncontrado.setName(clienteDto.getName());
 		clienteEncontrado.setFrom(clienteDto.getFrom());
 		clienteEncontrado.setThrough(clienteDto.getThrough());
