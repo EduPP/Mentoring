@@ -16,6 +16,7 @@ configurations {
 }
 
 repositories {
+	mavenLocal()
 	mavenCentral()
 }
 
@@ -32,6 +33,7 @@ dependencies {
 //	implementation 'mysql:mysql-connector-java'
 	implementation 'org.modelmapper:modelmapper:2.3.3'
 	implementation 'com.h2database:h2'
+	implementation 'com.globant.mentoring:Utils-commons:0.0.1-SNAPSHOT'
 	
 	compileOnly 'org.projectlombok:lombok:1.18.4'
 	annotationProcessor 'org.projectlombok:lombok:1.18.4'

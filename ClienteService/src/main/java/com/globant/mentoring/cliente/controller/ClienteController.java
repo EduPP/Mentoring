@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.globant.mentoring.cliente.models.dto.ClienteDTO;
-import com.globant.mentoring.cliente.models.entity.service.ClienteService;
+import com.globant.mentoring.cliente.dto.ClienteDTO;
+import com.globant.mentoring.cliente.service.ClienteService;
 
 @RefreshScope
 @RestController
@@ -33,15 +33,16 @@ public class ClienteController {
 
 	@GetMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	public ResponseEntity<?> obtenerCliente(@PathVariable long id) {
+	public ResponseEntity<?> obtenerCliente(@PathVariable long id) throws Exception {
 		ClienteDTO cliente = clienteService.findClienteById(id);
 		return new ResponseEntity<ClienteDTO>(cliente,HttpStatus.OK);
 	}
 	
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
-	public ResponseEntity<List<ClienteDTO>> listarClientes() {
+	public ResponseEntity<List<ClienteDTO>> listarClientes() throws Exception {
 		List<ClienteDTO> clientes = clienteService.findAll();
+	    
 		return new ResponseEntity<List<ClienteDTO>>(clientes,HttpStatus.OK);
 	}
 	

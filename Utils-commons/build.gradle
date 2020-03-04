@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'maven'
+}
+
+group = 'com.globant.mentoring'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    // Use jcenter for resolving dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}
+
+dependencies {
+	compileOnly 'com.fasterxml.jackson.core:jackson-databind:2.8.4'
+	implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.google.guava:guava:28.0-jre'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
