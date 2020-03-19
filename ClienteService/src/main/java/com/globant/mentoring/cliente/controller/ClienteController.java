@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.globant.mentoring.cliente.dto.ClienteDTO;
+import com.globant.mentoring.cliente.entity.Cliente;
 import com.globant.mentoring.cliente.service.ClienteService;
 
 @RefreshScope
@@ -33,9 +34,16 @@ public class ClienteController {
 
 	@GetMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	public ResponseEntity<?> obtenerCliente(@PathVariable long id) throws Exception {
+	public ResponseEntity<?> obtenerCliente(@PathVariable Long id) throws Exception {
 		ClienteDTO cliente = clienteService.findClienteById(id);
 		return new ResponseEntity<ClienteDTO>(cliente,HttpStatus.OK);
+	}
+	
+	@GetMapping("/oauth")
+	@ResponseStatus(HttpStatus.OK)
+	public ResponseEntity<Cliente> findClienteByUserName(@RequestParam String userName) throws Exception {
+		Cliente cliente = clienteService.findClienteByUserName(userName);
+		return new ResponseEntity<Cliente>(cliente,HttpStatus.OK);
 	}
 	
 	@GetMapping

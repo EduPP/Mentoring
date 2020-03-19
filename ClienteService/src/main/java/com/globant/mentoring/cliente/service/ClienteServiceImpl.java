@@ -28,9 +28,15 @@ public class ClienteServiceImpl implements ClienteService{
 	
 	@Override
 	@Transactional(readOnly = true)
-	public ClienteDTO findClienteById(long id) throws Exception{	
+	public ClienteDTO findClienteById(Long id) throws Exception{	
 		Cliente cliente = clienteDao.findById(id).get();
 		return modelMapper.map(cliente,ClienteDTO.class);
+	}
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Cliente findClienteByUserName(String userName) throws Exception{
+		return clienteDao.findByUsername(userName);
 	}
 
 	@Override
@@ -49,7 +55,7 @@ public class ClienteServiceImpl implements ClienteService{
 	}
 
 	@Override
-	public void deleteById(long id) throws Exception{
+	public void deleteById(Long id) throws Exception{
 		clienteDao.deleteById(id);		
 	}
 	

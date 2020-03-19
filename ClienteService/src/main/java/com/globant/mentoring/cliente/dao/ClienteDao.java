@@ -6,4 +6,5 @@ import com.globant.mentoring.cliente.entity.Cliente;
 
 public interface ClienteDao extends CrudRepository<Cliente, Long>{
 
+	public Cliente findByUsername(String userName);
 }

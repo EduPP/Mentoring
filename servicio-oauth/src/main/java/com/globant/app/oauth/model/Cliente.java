@@ -1,11 +1,8 @@
-package com.globant.mentoring.cliente.dto;
+package com.globant.app.oauth.model;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-
-import com.globant.mentoring.cliente.entity.Role;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,16 +10,17 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
-public class ClienteDTO implements Serializable {
+public class Cliente implements Serializable{
 
-	private static final long serialVersionUID = 3198761307627880968L;
-
-	private long id;
+	private Long id;
 	private String name;
-	private String userName;
+	private String username;
+	private String password;
 	private Date from;
-	private Date through;
+	private Date through;	
 	private String estado;
 	private List<Role> roles;
+	
+	private static final long serialVersionUID = 792594780988936534L;
 	
 }

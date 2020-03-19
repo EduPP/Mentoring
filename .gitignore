@@ -1,1 +1,5 @@
 .metadata
+*.classpath
+*bin/
+proyecto-demo/
+PatternDesign-Strategy/
